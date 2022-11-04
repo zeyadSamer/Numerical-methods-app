@@ -26,7 +26,6 @@ class NewtonRaphson extends NumericalMethod {
     Expression exp = p.parse(expression);
     ContextModel cm = ContextModel();
 
-
     print("by newton raphson");
 
     while(err>NumericalMethod.error){

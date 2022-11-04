@@ -60,11 +60,7 @@ class MethodCard extends StatelessWidget {
 
     },
           child: Card(
-            child:Image(
-
-                width:250,
-                image:NetworkImage(this.imageUrl)
-            ),
+            child:Image(image: AssetImage(imageUrl),width: 250,)
           ),
         ),
         SizedBox(height: 30,)

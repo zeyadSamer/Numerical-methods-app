@@ -14,11 +14,7 @@ class Bisection extends NumericalMethod {
 
   double err = 100;
   int iterationCount = 0;
-  static const String title="Bisection";
-
-
-
-
+  static const String title = "Bisection";
 
   @override
   dynamic getFunctionRoot() {
@@ -51,16 +47,13 @@ class Bisection extends NumericalMethod {
       double fOfRoot = exp.evaluate(EvaluationType.REAL, cm);
       cm.bindVariable(x, Number(a));
 
-      double fOfA=exp.evaluate(EvaluationType.REAL, cm);
-
-
-
+      double fOfA = exp.evaluate(EvaluationType.REAL, cm);
 
       if (fOfRoot * fOfA < 0) {
         //interval[a,root]
         b = root;
         fOfb = fOfRoot;
-      } else if(fOfRoot* fOfA>0) {
+      } else if (fOfRoot * fOfA > 0) {
         // interval[root,b]
         a = root;
         fOfA = fOfRoot;
@@ -72,26 +65,16 @@ class Bisection extends NumericalMethod {
       if (iterationCount > 1) {
         //updating the err
         this.err = getCurrentError(oldRoot, root);
-
       }
-
 
       print('$iterationCount ,$root');
       oldRoot = root;
     }
 
-
-
-
-
     return root;
   }
 
-
-  int getIterationCount(){
-
+  int getIterationCount() {
     return iterationCount;
   }
-
-
 }
